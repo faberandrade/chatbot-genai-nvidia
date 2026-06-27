@@ -1,0 +1,27 @@
+# =============================================================================
+# .gitignore
+# -----------------------------------------------------------------------------
+# Diz ao Git o que NAO enviar para o GitHub.
+# O mais importante: o ".env", que guarda a API Key secreta da NVIDIA.
+# =============================================================================
+
+# ---- Segredos / credenciais (NUNCA versionar) ----
+.env
+
+# ---- Ambiente virtual do Python ----
+venv/
+.venv/
+env/
+
+# ---- Arquivos temporarios do Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# ---- Config local do Streamlit ----
+.streamlit/secrets.toml
+
+# ---- Lixo de sistema / editor ----
+.DS_Store
+.vscode/
+.idea/

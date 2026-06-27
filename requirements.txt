@@ -1,0 +1,18 @@
+# =============================================================================
+# requirements.txt
+# -----------------------------------------------------------------------------
+# Lista de bibliotecas (pacotes) Python que o projeto precisa para funcionar.
+# Quando alguem (ou um servidor novo) for rodar o projeto, basta executar:
+#
+#     pip install -r requirements.txt
+#
+# que o pip instala exatamente estas versoes. Isso garante que o app rode
+# igual na sua maquina e na VM da Oracle ("na minha maquina funciona" resolvido).
+#
+# A versao fixada (==) evita surpresas no futuro caso a biblioteca mude.
+# =============================================================================
+
+streamlit==1.39.0        # Cria a interface web do chatbot (sem precisar saber HTML/JS)
+openai==1.54.0           # SDK usado para conversar com a API da NVIDIA (e compativel)
+httpx==0.27.2            # Usada por baixo pelo 'openai'; versao fixada p/ evitar conflito
+python-dotenv==1.0.1     # Le a chave secreta do arquivo .env durante o teste local
