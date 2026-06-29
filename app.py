@@ -57,10 +57,16 @@ st.caption("Modelo open source via NVIDIA NIM  •  MBA IA Generativa")
 # 4) ESCOLHA DO MODELO
 #    Esta string e o unico lugar que voce muda para trocar de modelo.
 #    Veja a lista completa em https://build.nvidia.com
-#      - "meta/llama-3.1-8b-instruct"   -> rapido e barato (bom para testar)
-#      - "meta/llama-3.3-70b-instruct"  -> respostas melhores (entrega final)
+#    Usamos um modelo da PROPRIA NVIDIA (atende o requisito da tarefa). Ele e um
+#    modelo "reasoning" (raciocina antes de responder), mas a API entrega esse
+#    raciocinio num campo separado (reasoning_content) que NAO exibimos -> a tela
+#    mostra so a resposta final, limpa. Escolhemos a versao "nano" (9B) por
+#    equilibrar boa qualidade com respostas rapidas (chat mais fluido).
+#      - "nvidia/nvidia-nemotron-nano-9b-v2"        -> modelo NVIDIA, rapido (ESCOLHIDO)
+#      - "nvidia/llama-3.3-nemotron-super-49b-v1.5" -> NVIDIA, mais potente porem lento
+#      - "meta/llama-3.1-8b-instruct"               -> alternativa leve (usada nos testes)
 # -----------------------------------------------------------------------------
-MODELO = "meta/llama-3.1-8b-instruct"
+MODELO = "nvidia/nvidia-nemotron-nano-9b-v2"
 
 
 # -----------------------------------------------------------------------------
