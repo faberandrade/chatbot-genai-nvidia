@@ -103,6 +103,22 @@ Usuário (navegador) ──> VM Oracle [Streamlit / app.py] ──> API NVIDIA N
 - Em produção (VM): definida como **variável de ambiente** do sistema operacional;
 - O arquivo `.env.example` documenta a variável esperada sem expor segredos.
 
+### Tokens e modelos de raciocínio (*reasoning*)
+O modelo adotado é do tipo **reasoning** — ele "raciocina" antes de responder. Um
+ponto técnico importante que identificamos é que o parâmetro `max_tokens` (que limita
+o tamanho da resposta) funciona como um **orçamento compartilhado** entre o
+raciocínio interno do modelo (campo `reasoning_content`, que não é exibido ao usuário)
+e a resposta final visível.
+
+Como o assistente foi especializado em um tema específico (o universo de J.R.R.
+Tolkien), as respostas tendem a ser mais detalhadas. Em testes empíricos, com
+`max_tokens = 1024` o raciocínio sozinho consumia cerca de 650 tokens, deixando pouco
+espaço para a resposta — que era **cortada no meio** (`finish_reason: length`).
+Aumentamos o limite para **4096 tokens**, passando a obter respostas completas
+(`finish_reason: stop`). **Lição aprendida:** modelos de *reasoning* exigem um
+`max_tokens` mais generoso do que modelos *instruct* tradicionais, pois o "pensamento"
+também consome parte desse orçamento.
+
 ---
 
 ## 5. Implantação
