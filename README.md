@@ -7,7 +7,7 @@
 >
 > _Trabalho da disciplina **Produtos de GenAI** — MBA em IA Generativa._
 
-🔗 **Aplicação no ar:** http://136.248.110.70:8501
+🔗 **Aplicação no ar:** http://164.152.63.48:8501
 📦 **Repositório:** https://github.com/faberandrade/chatbot-genai-nvidia
 
 ---
@@ -85,7 +85,7 @@ da Terra-Média do autor — e recusa educadamente perguntas fora desse tema.
 - **Recursos computacionais:** **4 OCPUs** e **24 GB de RAM**
 - **Sistema operacional:** **Ubuntu 24.04 LTS**
 - **Rede:** VCN dedicada com Internet Gateway; **porta 8501** exposta
-- **Endereço público:** `136.248.110.70`
+- **Endereço público:** `164.152.63.48` (IP reservado/estático)
 
 > Como o modelo é executado na NVIDIA, esses recursos são mais do que suficientes — a VM
 > apenas hospeda a aplicação web, que consome pouquíssima memória e processamento.
